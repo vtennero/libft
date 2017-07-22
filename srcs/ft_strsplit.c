@@ -6,13 +6,13 @@
 /*   By: vtennero <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/06/17 17:50:44 by vtennero          #+#    #+#             */
-/*   Updated: 2017/07/22 11:24:18 by vtennero         ###   ########.fr       */
+/*   Updated: 2017/07/22 12:12:10 by vtennero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/libft.h"
 
-static char	*ft_strsplit_strdup(const char *src, char c)
+static char		*ft_strsplit_strdup(const char *src, char c)
 {
 	char	*mot;
 	int		l;
@@ -50,7 +50,7 @@ static int		ft_strsplit_nbwds(const char *str, char c)
 	return (k);
 }
 
-char	**ft_strsplit(char const *s, char c)
+char			**ft_strsplit(char const *s, char c)
 {
 	char	**tab;
 	int		n;

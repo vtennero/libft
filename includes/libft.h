@@ -6,7 +6,7 @@
 /*   By: vtennero <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/06/17 15:25:20 by vtennero          #+#    #+#             */
-/*   Updated: 2017/07/22 11:26:19 by vtennero         ###   ########.fr       */
+/*   Updated: 2017/07/22 12:24:07 by vtennero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,17 +63,8 @@ int		ft_memcmp(const void *s1, const void *s2, size_t n);
 char	**ft_strsplit(char const *s, char c);
 void	ft_putnbr_fd(int n, int fd);
 char	*ft_strtrim(char const *s);
-int		ft_strtrimc1(char const *s);
-int		ft_strtrimc2(char const *s, int n);
-char	*ft_strtrimempty(void);
-char	*ft_strtrimcpy(char *dst, const char *src, size_t len, int start);
 char	*ft_itoa(int n);
-char	*ft_itoazero(void);
-int		ft_itoalength(int n);
-char	*ft_itoaneg(int nv, int l);
-char	*ft_itoapos(int nv, int l);
 int		ft_atoi(const char *str);
-int		ft_atoisign(int sign, long n);
 size_t	ft_strlcat(char *dst, const char *src, size_t size);
 void	*ft_memmove(void *dst, const void *src, size_t len);
 void	ft_putchar(char c);

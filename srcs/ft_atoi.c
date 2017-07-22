@@ -6,13 +6,32 @@
 /*   By: vtennero <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/06/18 14:17:25 by vtennero          #+#    #+#             */
-/*   Updated: 2017/07/09 17:54:05 by vtennero         ###   ########.fr       */
+/*   Updated: 2017/07/22 12:19:32 by vtennero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/libft.h"
 
-int		ft_atoi(const char *str)
+static int		ft_atoisign(int sign, long n)
+{
+	if (sign == -1)
+	{
+		if (n - 9223372036854775807 > 0)
+			return (0);
+		else
+			return (-(int)n);
+	}
+	else
+	{
+		if (n - 9223372036854775807 > 0)
+			return (-1);
+		else
+			return ((int)n);
+	}
+	return (197);
+}
+
+int				ft_atoi(const char *str)
 {
 	int		i;
 	long	n;
