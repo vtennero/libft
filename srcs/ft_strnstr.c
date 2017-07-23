@@ -6,7 +6,7 @@
 /*   By: vtennero <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/06/18 19:44:34 by vtennero          #+#    #+#             */
-/*   Updated: 2017/06/18 19:51:22 by vtennero         ###   ########.fr       */
+/*   Updated: 2017/07/23 20:44:50 by vtennero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ char	*ft_strnstr(const char *big, const char *little, size_t len)
 
 	if (!*big && !*little)
 		return ((char*)big);
-	while (*big)
+	while (*big && len > 0)
 	{
 		start = (char*)big;
 		to_find = (char*)little;
@@ -31,6 +31,7 @@ char	*ft_strnstr(const char *big, const char *little, size_t len)
 		}
 		if (!(*to_find))
 			return (start);
+		len--;
 		big = start + 1;
 	}
 	return (NULL);
