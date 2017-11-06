@@ -1,38 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strnstr.c                                       :+:      :+:    :+:   */
+/*   ft_lstnew.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vtennero <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/06/18 19:44:34 by vtennero          #+#    #+#             */
-/*   Updated: 2017/11/06 14:39:45 by vtennero         ###   ########.fr       */
+/*   Created: 2017/11/06 14:53:27 by vtennero          #+#    #+#             */
+/*   Updated: 2017/11/06 15:19:49 by vtennero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/libft.h"
 
-char	*ft_strnstr(const char *big, const char *litl, size_t len)
+t_list	*ft_lstnew(void const *content, size_t content_size)
 {
-	char	*start;
-	char	*to_find;
+	t_list	*list;
 
-	if (!*big && !*litl)
-		return ((char*)big);
-	while (*big && len > 0)
+	list = malloc(sizeof(t_list));
+	if (list != NULL)
 	{
-		start = (char*)big;
-		to_find = (char*)litl;
-		while (*big && *to_find && (*big == *to_find) && (len != 0))
-		{
-			big++;
-			to_find++;
-			len--;
-		}
-		if (!(*to_find))
-			return (start);
-		len--;
-		big = start + 1;
+		list->content = (content == 0 ? NULL : content);
+		list->content_size = (content == 0 ? content_size : 0);
+		list->next = NULL;
 	}
-	return (NULL);
+	return (list);
 }
