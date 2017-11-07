@@ -11,6 +11,26 @@
 /* ************************************************************************** */
 
 #include "../includes/libft.h"
+#include <stdio.h>
+
+void	ft_lstpushfront(t_list **begin, void *content)
+{
+	t_list	*tmp;
+
+	tmp = malloc(sizeof(t_list));
+	if (tmp)
+	{
+		tmp->content = content;
+		tmp->next = *begin;
+		*begin = tmp;
+	}
+}
+
+t_list	*ft_chnglst(t_list *list, void *str)
+{
+	list->content = str;
+	return (list);
+}
 
 t_list	*ft_lstnew(void const *content, size_t content_size)
 {
@@ -24,4 +44,25 @@ t_list	*ft_lstnew(void const *content, size_t content_size)
 		list->next = NULL;
 	}
 	return (list);
+}
+
+int	main(void)
+{
+	t_list	*list;
+
+	list = NULL;
+	ft_lstpushfront(&list, "toto");
+	ft_lstpushfront(&list, "tata");
+	ft_lstpushfront(&list, "tutu");
+	ft_lstiter(list, *ft_chnglst(list, "chang"));
+	while (list)
+	{
+		//ft_chnglst(list, "changed !");
+		printf("%s\n", (char*)list->content);
+		list = list->next;
+	}
+
+	//printf("%s\n", ft_chglst(list->data)
+	//printf("%s\n", (char*)ft_lstnew("toto", 56)->content);
+	return(0);
 }

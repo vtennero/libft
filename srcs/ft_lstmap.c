@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstnew.c                                        :+:      :+:    :+:   */
+/*   ft_lstmap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vtennero <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -12,16 +12,14 @@
 
 #include "../includes/libft.h"
 
-t_list	*ft_lstnew(void const *content, size_t content_size)
+t_list	*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem))
 {
-	t_list	*list;
+	t_list	*new_list;
 
-	list = malloc(sizeof(t_list));
-	if (list)
+	while (lst)
 	{
-		list->content = (content == 0 ? NULL : (void *)content);
-		list->content_size = (content == 0 ? content_size : 0);
-		list->next = NULL;
+		new_list = malloc(sizeof(t_list));
+		new_list = (f)(lst);
+		lst = lst->next;
 	}
-	return (list);
 }

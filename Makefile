@@ -28,7 +28,8 @@ SRC = srcs/ft_memcmp.c srcs/ft_strclr.c srcs/ft_strnequ.c srcs/ft_atoi.c \
 	  srcs/ft_putstr_fd.c srcs/ft_strmapi.c srcs/ft_tolower.c \
 	  srcs/ft_memalloc.c srcs/ft_strncat.c srcs/ft_toupper.c \
 	  srcs/ft_memccpy.c srcs/ft_strcat.c srcs/ft_strncmp.c srcs/ft_memchr.c \
-	  srcs/ft_strchr.c srcs/ft_strncpy.c srcs/ft_lstnew.c
+	  srcs/ft_strchr.c srcs/ft_strncpy.c srcs/ft_lstnew.c srcs/ft_lstadd.c \
+	  srcs/ft_lstmap.c
 
 OBJ = ft_memcmp.o ft_strclr.o ft_strnequ.o ft_atoi.o ft_memcpy.o ft_strcmp.o \
 	  ft_strnew.o ft_bzero.o ft_memdel.o ft_strcpy.o ft_strnstr.o \
@@ -41,9 +42,9 @@ OBJ = ft_memcmp.o ft_strclr.o ft_strnequ.o ft_atoi.o ft_memcpy.o ft_strcmp.o \
 	  ft_putstr.o ft_strmap.o ft_putstr_fd.o \
 	  ft_strmapi.o ft_tolower.o ft_memalloc.o ft_strncat.o ft_toupper.o \
 	  ft_memccpy.o ft_strcat.o ft_strncmp.o ft_memchr.o ft_strchr.o \
-	  ft_strncpy.o ft_lstnew.o
+	  ft_strncpy.o ft_lstnew.o ft_lstiter.o ft_lstadd.o ft_lstmap.o
 
-HEADER = includes/libft.h
+HEADER = /includes/libft.h
 
 all: $(NAME)
 
