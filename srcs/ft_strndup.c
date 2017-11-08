@@ -6,9 +6,11 @@
 /*   By: vtennero <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/06 14:27:00 by vtennero          #+#    #+#             */
-/*   Updated: 2017/11/06 14:30:54 by vtennero         ###   ########.fr       */
+/*   Updated: 2017/11/08 18:37:41 by vtennero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "../includes/libft.h"
 
 char	*ft_strndup(const char *s1, int n)
 {
