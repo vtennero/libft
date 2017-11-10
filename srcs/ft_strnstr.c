@@ -6,13 +6,13 @@
 /*   By: vtennero <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/10 14:18:13 by vtennero          #+#    #+#             */
-/*   Updated: 2017/11/10 16:34:19 by vtennero         ###   ########.fr       */
+/*   Updated: 2017/11/10 17:01:56 by vtennero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/libft.h"
 
-char		*ft_strndup2(const char *s1, int n)
+static char	*ft_strndup2(const char *s1, int n)
 {
 	char	*t;
 	int		i;
@@ -30,7 +30,14 @@ char		*ft_strndup2(const char *s1, int n)
 	return (t);
 }
 
-int			ft_strmstr(const char *big, const char *little, int i, int k)
+static int	*ft_increment(int *addbegin, int *addi)
+{
+	if (*addbegin == 0)
+		*addbegin = *addi;
+	return (addi++);
+}
+
+static int	ft_strmstr(const char *big, const char *little, int i, int k)
 {
 	char	*start;
 	char	*to_find;
@@ -47,10 +54,9 @@ int			ft_strmstr(const char *big, const char *little, int i, int k)
 		begin = 0;
 		while (*big && *to_find && (*big == *to_find))
 		{
-			begin = (begin == 0) ? i : begin;
 			big++;
 			to_find++;
-			i++;
+			ft_increment(&begin, &i);
 		}
 		k++;
 		if (!(*to_find))
@@ -62,7 +68,7 @@ int			ft_strmstr(const char *big, const char *little, int i, int k)
 
 char		*ft_strnstr(const char *big, const char *litl, size_t len)
 {
-	char 	*str;
+	char	*str;
 	int		i;
 	int		l;
 	int		k;
@@ -83,16 +89,3 @@ char		*ft_strnstr(const char *big, const char *litl, size_t len)
 	}
 	return ((char *)big);
 }
-/*
-   int		main(void)
-   {
-//char buf[] = "ozarabozaraboze123";
-//char buf2[] = "un deux 9";
-char buf3[] = "see FF your FF now return FF";
-
-//printf("%s\n", ft_strnstr(buf, "ozaraboze", 15));
-printf("%s\n", ft_strnstr(buf3, buf3, ft_strlen(buf3)));
-//printf("%s\n", ft_strnstr(buf2, "deux", 10));
-return (0);
-}
-*/
