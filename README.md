@@ -12,8 +12,6 @@ make
 
 ## Linux Support
 
-To use it on Linux:
-
 In the Makefile, simply replace :
 
 ```
