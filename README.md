@@ -1,6 +1,6 @@
 # libft
 
-The goal of the project is to build a library with a selection of ~60 functions (some of them inspired by the libc).
+The goal of the project is to build a library with ~80 functions (some of them inspired by the libc).
 
 ## Installing
 
