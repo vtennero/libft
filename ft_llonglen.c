@@ -1,25 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   ft_llonglen.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vtennero <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/06/24 17:02:14 by vtennero          #+#    #+#             */
-/*   Updated: 2017/11/27 16:18:03 by vtennero         ###   ########.fr       */
+/*   Created: 2017/12/20 16:29:31 by vtennero          #+#    #+#             */
+/*   Updated: 2017/12/20 16:29:33 by vtennero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_strlen(const char *s)
+int	ft_llonglen(long long n)
 {
-	int	i;
+	int	len;
 
-	i = 0;
-	if (s == NULL)
-		return (0);
-	while (s[i] != '\0')
-		i++;
-	return (i);
+	len = (n < 0) ? 2 : 1;
+	while (n /= 10)
+		++len;
+	return (len);
 }

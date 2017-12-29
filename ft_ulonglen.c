@@ -1,25 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   ft_ulonglen.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vtennero <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/06/24 17:02:14 by vtennero          #+#    #+#             */
-/*   Updated: 2017/11/27 16:18:03 by vtennero         ###   ########.fr       */
+/*   Created: 2017/12/20 16:56:38 by vtennero          #+#    #+#             */
+/*   Updated: 2017/12/20 16:56:55 by vtennero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_strlen(const char *s)
+int	ft_ulonglen(unsigned long n)
 {
-	int	i;
+	int	len;
 
-	i = 0;
-	if (s == NULL)
-		return (0);
-	while (s[i] != '\0')
-		i++;
-	return (i);
+	len = 1;
+	while (n /= 10)
+		++len;
+	return (len);
 }

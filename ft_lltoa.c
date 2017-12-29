@@ -1,25 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   ft_lltoa.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vtennero <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/06/24 17:02:14 by vtennero          #+#    #+#             */
-/*   Updated: 2017/11/27 16:18:03 by vtennero         ###   ########.fr       */
+/*   Created: 2017/12/20 16:57:41 by vtennero          #+#    #+#             */
+/*   Updated: 2017/12/20 16:57:46 by vtennero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_strlen(const char *s)
+char		*ft_lltoa(long long n)
 {
-	int	i;
+	int		neg;
+	int		i;
+	char	*str;
 
-	i = 0;
-	if (s == NULL)
-		return (0);
-	while (s[i] != '\0')
-		i++;
-	return (i);
+	neg = (n < 0) ? 1 : 0;
+	i = ft_llonglen((n));
+	str = malloc(sizeof(char) * i + 1);
+	if (str)
+	{
+		while (i > 0)
+		{
+			str[--i] = ft_abs(n % 10) + 48;
+			n /= 10;
+		}
+		if (neg == 1)
+			str[0] = '-';
+	}
+	return (str);
 }

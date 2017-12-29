@@ -1,33 +1,41 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strcmp.c                                        :+:      :+:    :+:   */
+/*   ft_ltoa_base.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vtennero <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/06/17 15:47:16 by vtennero          #+#    #+#             */
-/*   Updated: 2017/11/28 10:20:09 by vtennero         ###   ########.fr       */
+/*   Created: 2017/12/17 17:02:26 by vtennero          #+#    #+#             */
+/*   Updated: 2017/12/20 17:01:46 by vtennero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_strcmp(const char *s1, const char *s2)
+char	*ft_ltoa_base(long n, const char *base)
 {
-	unsigned int	i;
+	char	*str;
+	int		baselen;
+	int		i;
+	long	nc;
+	int		neg;
 
-	i = 0;
-	if (!s1 && !s2)
-		return (0);
-	if (!s1)
-		return (s2[i]);
-	if (!s2)
-		return (s1[i]);
-	while (s1[i] || s2[i])
+	if (!base)
+		return (NULL);
+	neg = (n < 0) ? 1 : 0;
+	i = 1 + neg;
+	baselen = ft_strlen(base);
+	nc = n;
+	while (nc /= baselen)
+		++i;
+	if ((str = ft_strnew(i)) == NULL)
+		return (NULL);
+	str[i] = '\0';
+	while (i > 0)
 	{
-		if (s1[i] != s2[i])
-			return ((unsigned char)s1[i] - (unsigned char)s2[i]);
-		i++;
+		str[--i] = base[ft_abs(n % baselen)];
+		n /= baselen;
 	}
-	return (0);
+	str[i] = (neg == 1) ? '-' : str[i];
+	return (str);
 }
