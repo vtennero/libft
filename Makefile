@@ -47,7 +47,8 @@ SRC = ft_memcmp.c \
 	  ft_putnbr.c \
 	  ft_strlcat.c \
 	  ft_strtrim.c \
-	  ft_strjoin.c ft_strsub.c \
+	  ft_strjoin.c \
+	  ft_strsub.c \
 	  ft_putnbr_fd.c \
 	  ft_strlen.c \
 	  ft_strmap.c \
@@ -74,6 +75,7 @@ SRC = ft_memcmp.c \
 	  ft_lstmap.c \
 	  ft_strndup.c \
 	  ft_abs.c \
+	  ft_abs_ll.c \
 	  ft_max.c \
 	  ft_itoa.c \
 	  ft_ltoa.c \
@@ -89,7 +91,10 @@ SRC = ft_memcmp.c \
 	  ft_longlen.c \
 	  ft_ulonglen.c \
 	  ft_llonglen.c \
-	  ft_ullonglen.c
+	  ft_ullonglen.c \
+	  ft_wcharlen.c \
+	  ft_wstrlen.c \
+	  ft_eq_char.c
 
 OBJ = $(SRC:.c=.o)
 
