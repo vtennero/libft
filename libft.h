@@ -6,17 +6,23 @@
 /*   By: vtennero <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/06/17 15:25:20 by vtennero          #+#    #+#             */
-/*   Updated: 2018/01/25 16:50:42 by vtennero         ###   ########.fr       */
+/*   Updated: 2018/02/11 17:40:42 by vtennero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBFT_H
 # define LIBFT_H
+
+# define BUFF_SIZE 4
+
 # include "libft.h"
 # include <unistd.h>
 # include <string.h>
 # include <stdlib.h>
 # include <wchar.h>
+# include <sys/types.h>
+# include <sys/uio.h>
+# include <fcntl.h>
 
 typedef struct		s_list
 {
@@ -80,8 +86,9 @@ int					ft_wcharlen(wchar_t c);
 int					ft_wcharlen(wchar_t c);
 int					ft_wstrlen(wchar_t *wstr);
 int					ft_eq_char(char c1, char c2);
+int					get_next_line(int const fd, char **line);
 /*
-** ------------------------- MEMORY MANIPULATION -------------------------
+** ------------------------- LISTS -------------------------
 */
 void				ft_lstadd(t_list **alst, t_list *new);
 void				ft_lstiter(t_list *lst, void (*f)(t_list *elem));
@@ -90,7 +97,7 @@ void				ft_lstdelone(t_list **alst, void (*del)(void *, size_t));
 void				ft_lstdel(t_list **alst, void (*del)(void *, size_t));
 t_list				*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem));
 /*
-** ------------------------- LISTS -------------------------
+** ------------------------- MEMORY MANIPULATION -------------------------
 */
 void				*ft_memmove(void *dst, const void *src, size_t len);
 void				*ft_memcpy(void *dst, const void *src, size_t n);

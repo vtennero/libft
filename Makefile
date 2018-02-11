@@ -6,7 +6,7 @@
 #    By: vtennero <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/06/17 15:16:05 by vtennero          #+#    #+#              #
-#    Updated: 2017/11/27 11:07:00 by vtennero         ###   ########.fr        #
+#    Updated: 2018/02/11 17:38:40 by vtennero         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -94,7 +94,8 @@ SRC = ft_memcmp.c \
 	  ft_ullonglen.c \
 	  ft_wcharlen.c \
 	  ft_wstrlen.c \
-	  ft_eq_char.c
+	  ft_eq_char.c \
+	  get_next_line.c
 
 OBJ = $(SRC:.c=.o)
 
