@@ -6,7 +6,7 @@
 #    By: vtennero <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/06/17 15:16:05 by vtennero          #+#    #+#              #
-#    Updated: 2018/02/11 17:38:40 by vtennero         ###   ########.fr        #
+#    Updated: 2018/02/19 11:24:50 by vtennero         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -77,6 +77,7 @@ SRC = ft_memcmp.c \
 	  ft_abs.c \
 	  ft_abs_ll.c \
 	  ft_max.c \
+	  ft_min.c \
 	  ft_itoa.c \
 	  ft_ltoa.c \
 	  ft_lutoa.c \

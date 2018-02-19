@@ -6,7 +6,7 @@
 /*   By: vtennero <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/06/17 15:25:20 by vtennero          #+#    #+#             */
-/*   Updated: 2018/02/11 17:40:42 by vtennero         ###   ########.fr       */
+/*   Updated: 2018/02/19 11:25:08 by vtennero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -82,6 +82,7 @@ void				ft_putchar_fd(char c, int fd);
 int					ft_abs(int n);
 long long			ft_abs_ll(long long n);
 int					ft_max(size_t n, size_t p);
+int					ft_min(size_t n, size_t p);
 int					ft_wcharlen(wchar_t c);
 int					ft_wcharlen(wchar_t c);
 int					ft_wstrlen(wchar_t *wstr);
