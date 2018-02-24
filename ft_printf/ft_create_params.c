@@ -1,32 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstnew.c                                        :+:      :+:    :+:   */
+/*   ft_create_params.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vtennero <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/02/19 13:41:41 by vtennero          #+#    #+#             */
-/*   Updated: 2018/02/19 13:41:44 by vtennero         ###   ########.fr       */
+/*   Created: 2017/12/30 14:49:56 by vtennero          #+#    #+#             */
+/*   Updated: 2017/12/30 14:58:39 by vtennero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "ft_printf.h"
 
-t_list	*ft_lstnew(const void *content, size_t content_size)
+t_params	*ft_create_params(void)
 {
-	t_list	*lst;
+	t_params	*arg;
 
-	if ((lst = (t_list *)ft_memalloc(sizeof(t_list))))
-	{
-		if (content)
-		{
-			if (!(lst->content = ft_memdup(content, content_size)))
-			{
-				free(lst);
-				return (NULL);
-			}
-		}
-		lst->content_size = (content ? content_size : 0);
-	}
-	return (lst);
+	arg = (t_params *)malloc(sizeof(t_params));
+	if (arg)
+		return (arg);
+	else
+		return (NULL);
+}
+
+t_params	*ft_set_zero_params(t_params *arg)
+{
+	ft_bzero(arg, sizeof(t_params));
+	return (arg);
 }

@@ -1,32 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstnew.c                                        :+:      :+:    :+:   */
+/*   ft_is_cap_s.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vtennero <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/02/19 13:41:41 by vtennero          #+#    #+#             */
-/*   Updated: 2018/02/19 13:41:44 by vtennero         ###   ########.fr       */
+/*   Created: 2018/01/30 19:23:01 by vtennero          #+#    #+#             */
+/*   Updated: 2018/01/30 19:23:08 by vtennero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "ft_printf.h"
 
-t_list	*ft_lstnew(const void *content, size_t content_size)
+char	*ft_is_cap_s(t_params *arg, va_list lst)
 {
-	t_list	*lst;
-
-	if ((lst = (t_list *)ft_memalloc(sizeof(t_list))))
-	{
-		if (content)
-		{
-			if (!(lst->content = ft_memdup(content, content_size)))
-			{
-				free(lst);
-				return (NULL);
-			}
-		}
-		lst->content_size = (content ? content_size : 0);
-	}
-	return (lst);
+	arg->flags[L] = 1;
+	return (ft_is_s(arg, lst));
 }

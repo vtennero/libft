@@ -1,32 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstnew.c                                        :+:      :+:    :+:   */
+/*   ft_printf.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vtennero <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/02/19 13:41:41 by vtennero          #+#    #+#             */
-/*   Updated: 2018/02/19 13:41:44 by vtennero         ###   ########.fr       */
+/*   Created: 2017/12/12 17:48:38 by vtennero          #+#    #+#             */
+/*   Updated: 2018/01/30 14:57:00 by vtennero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "ft_printf.h"
 
-t_list	*ft_lstnew(const void *content, size_t content_size)
+int				ft_printf(const char *format, ...)
 {
-	t_list	*lst;
+	va_list		lst;
+	int			n;
 
-	if ((lst = (t_list *)ft_memalloc(sizeof(t_list))))
-	{
-		if (content)
-		{
-			if (!(lst->content = ft_memdup(content, content_size)))
-			{
-				free(lst);
-				return (NULL);
-			}
-		}
-		lst->content_size = (content ? content_size : 0);
-	}
-	return (lst);
+	va_start(lst, format);
+	n = ft_read_format((char *)format, lst, 1);
+	va_end(lst);
+	return (n);
+}
+
+int				ft_dprintf(int fd, const char *format, ...)
+{
+	va_list		lst;
+	int			n;
+
+	va_start(lst, format);
+	n = ft_read_format((char *)format, lst, fd);
+	va_end(lst);
+	return (n);
 }
