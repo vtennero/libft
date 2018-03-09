@@ -21,7 +21,7 @@ FLAGS = -Wall -Werror -Wextra
 With :
 
 ```
-#FLAGS = -Wall -Wno-empty-body -Wno-unused -Wextra
+FLAGS = -Wall -Wno-empty-body -Wno-unused -Wextra
 ```
 
 ## Additional Resources
