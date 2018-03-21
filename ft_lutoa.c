@@ -19,6 +19,8 @@ char		*ft_lutoa(unsigned long n)
 
 	i = ft_ulonglen((n));
 	str = malloc(sizeof(char) * i + 1);
+	if (!str)
+		return (NULL);
 	str[i] = '\0';
 	if (str)
 	{
